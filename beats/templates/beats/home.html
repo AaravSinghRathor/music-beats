@@ -1,0 +1,20 @@
+{% extends "users/base.html" %}
+
+{% block content%}
+<div>
+    <h1>Music Beats</h1>
+    <div class="col-md-9" style="margin: 3%;">
+        <div class="row" style="margin: 3%;">
+            {% for beat in beats %}
+                <div class="card" style="width: 18rem; margin:3%">
+                    <img src="{{ beat.coverpage.url }}" class="card-img-top" alt="Coverpage">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ beat.title}}</h5>
+                        <a href="{% url 'play-beat' beat.id %}" class="btn btn-primary">{{ beat.title }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
