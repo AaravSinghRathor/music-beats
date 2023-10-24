@@ -4,3 +4,4 @@ __pycache__
 migrations
 audio
 images
+.DS_Store

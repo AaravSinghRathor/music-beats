@@ -1,20 +1,23 @@
 {% extends "users/base.html" %}
 
 {% block content%}
-<div>
-    <h1>Music Beats</h1>
-    <div class="col-md-9" style="margin: 3%;">
-        <div class="row" style="margin: 3%;">
-            {% for beat in beats %}
-                <div class="card" style="width: 18rem; margin:3%">
-                    <img src="{{ beat.coverpage.url }}" class="card-img-top" alt="Coverpage">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ beat.title}}</h5>
-                        <a href="{% url 'play-beat' beat.id %}" class="btn btn-primary">{{ beat.title }}</a>
-                    </div>
-                </div>
-            {% endfor %}
+<div class="spotify-playlists">
+    <h2>Trending Beats</h2>
+
+    <div class="list">
+        {% for beat in beats %}
+        <div class="item">
+            <img src="{{ beat.coverpage.url }}" />
+            <div class="play" data-audio-path="{{ beat.audio.url }}" data-beat-title="{{ beat.title }}"
+                data-beat-singer="{{ beat.singer }}" data-image-url="{{ beat.coverpage.url }}">
+                <span class="fa fa-play"></span>
+            </div>
+            <h4>{{ beat.title }}</h4>
+            <p>{{ beat.singer }}</p>
         </div>
+        {% endfor %}
     </div>
 </div>
+
+{% include 'users/audio_player.html' %}
 {% endblock content %}

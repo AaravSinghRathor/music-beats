@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Beats
+from .models import Beats, Playlist
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
 def home(request):
-    beats = Beats.objects.all()
-    return render(request, "beats/home.html", {'beats': beats})
+    trending_beats = Playlist.objects.get(name='Trending Beats').beats_set.all()
+    return render(request, "beats/home.html", {'beats': trending_beats})
 
 class BeatsCreateView(LoginRequiredMixin, CreateView):
     model = Beats

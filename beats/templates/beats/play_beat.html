@@ -3,15 +3,13 @@
 {% block content %}
 <div class="content-section">
     <div class="card bg-dark text-white">
-        <img src="{{ beat.coverpage.url }}" class="card-img" alt="Coverpage" width="350" height="600">
+        <img src="{{ beat.coverpage.url }}" class="card-img" alt="Coverpage" width="200" height="200">
         <div class="card-img-top">
             <h5 class="card-title" style="margin-left: 3%;">{{ beat.title }}</h5>
             <h5 class="card-title">{{ beat.singer }}</h5>
             <audio controls>
                 <source src="{{ beat.audio.url }}" type="audio/mpeg">
-                <source src="myAudio.ogg" type="audio/ogg">
-                <p>Your browser doesn't support HTML5 audio. Here is
-                    a <a href="myAudio.mp3">link to the audio</a> instead.</p>
+                <p>Your browser doesn't support HTML5 audio </p>
             </audio>
         </div>
         </div>
