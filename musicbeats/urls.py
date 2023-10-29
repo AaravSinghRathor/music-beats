@@ -26,6 +26,7 @@ urlpatterns = [
     path("", include("users.urls")),
     path("", view=beat_views.home, name="home"),
     path("beats/", include("beats.urls")),
+    path("playlist/", include("playlist.urls")),
 ]
 
 if settings.DEBUG:

@@ -13,7 +13,9 @@
         <br>
         <small style="float: left; position: relative; left: 15px;" class="start-time"></small>
         <small style="float: right; position: relative; right: 20px;" class="end-time"></small>
-
     </div>
+    {% if user.is_authenticated %}
+        <span id="like" class="fa fas fa-heart"></span>
+    {% endif %}
     <div class="album-image" style="background-image: url('https://artwork-cdn.7static.com/static/img/sleeveart/00/051/614/0005161476_350.jpg')"></div>
 </div>

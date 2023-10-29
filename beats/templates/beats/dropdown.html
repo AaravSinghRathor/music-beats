@@ -1,0 +1,17 @@
+<div class="dropdown">
+  <button class="btn btn-dark bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-ellipsis fa-xs"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li>
+      <a class="dropdown-item" href="#">Add to Playlist &raquo;</a>
+      <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+        {% for playlist in user_playlists %}
+        <li><span class="dropdown-item dropdown-playlist" data-beat-id="{{ beat.id }}"
+            data-playlist-id="{{ playlist.id }}">{{ playlist.name }}</span></li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li><a class="dropdown-item" href="#">Dummy</a></li>
+  </ul>
+</div>

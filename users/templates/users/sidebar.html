@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="logo">
-    <a href="#">
+    <a href="{% url 'home' %}">
       <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Logo" />
     </a>
   </div>
@@ -22,7 +22,7 @@
       </li>
 
       <li>
-        <a href="#">
+        <a href="{% url 'get-playlists' %}">
           <span class="fa fas fa-book"></span>
           <span>Your Library</span>
         </a>
@@ -33,15 +33,21 @@
   <div class="navigation">
     <ul>
       <li>
-        <a href="#">
+        <a href="{% url 'create-beats' %}">
+          <span class="fa fas fa-music"></span>
+          <span>Create Beat</span>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'create-playlist' %}">
           <span class="fa fas fa-plus-square"></span>
           <span>Create Playlist</span>
         </a>
       </li>
 
       <li>
-        <a href="#">
-          <span class="fa fas fa-heart"></span>
+        <a href="{% url 'liked-beats' %}">
+          <span class="fa fa-heart"></span>
           <span>Liked Songs</span>
         </a>
       </li>
